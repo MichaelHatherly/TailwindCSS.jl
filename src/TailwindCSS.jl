@@ -2,6 +2,8 @@ module TailwindCSS
 
 using Artifacts
 
+export tailwindcss
+
 """
     tailwindcss() -> Cmd
 
