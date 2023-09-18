@@ -6,7 +6,7 @@ using Test
     mktempdir() do dir
         cd(dir) do
             # Initialize the config.
-            run(`$(TailwindCSS.tailwindcss()) init`)
+            run(`$(tailwindcss()) init`)
             @test isfile("tailwind.config.js")
 
             # Update the config.
@@ -58,7 +58,7 @@ using Test
 
             @test !isfile("dist/output.css")
 
-            run(`$(TailwindCSS.tailwindcss()) -i ./src/input.css -o ./dist/output.css`)
+            run(`$(tailwindcss()) -i ./src/input.css -o ./dist/output.css`)
 
             @test isfile("dist/output.css")
 

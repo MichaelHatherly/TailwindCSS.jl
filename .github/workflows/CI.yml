@@ -30,13 +30,13 @@ jobs:
       fail-fast: false
       matrix:
         version:
-          # - "1.6"
+          - "1.6"
           - "1.9"
-          # - "nightly"
+          - "nightly"
         os:
           - ubuntu-latest
-          # - macOS-latest
-          # - windows-latest
+          - macOS-latest
+          - windows-latest
 
     steps:
       - uses: actions/checkout@v4
