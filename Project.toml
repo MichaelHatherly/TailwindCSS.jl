@@ -5,8 +5,6 @@ version = "0.1.0"
 
 [deps]
 Artifacts = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
-BetterFileWatching = "c9fd44ac-77b5-486c-9482-9798bd063cc6"
 
 [compat]
-BetterFileWatching = "0.1"
 julia = "1.6"
