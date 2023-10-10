@@ -1,7 +1,6 @@
 module TailwindCSS
 
 using Artifacts
-import BetterFileWatching
 
 export tailwindcss
 
@@ -39,10 +38,10 @@ end
 
 Print the help string for the `tailwindcss` executable.
 """
-function help()
+function help(io::IO = stdout)
     init = readchomp(`$(tailwindcss()) init --help`)
     build = readchomp(`$(tailwindcss()) build --help`)
-    println(stdout, init, build)
+    println(io, init, build)
 end
 
 """
@@ -107,24 +106,6 @@ function build(;
         end
     else
         error("'$root' is not a directory.")
-    end
-end
-
-function watch(;
-    root::AbstractString,
-    input::AbstractString,
-    output::AbstractString,
-    refresh::Function,
-)
-    BetterFileWatching.watch_folder(root) do event
-        @debug "file watch event" event
-        if output ∉ event.paths
-            # Only rebuild the tailwind output file if it isn't what triggered
-            # the event. If we did then we'd get stuck in a loop of rebuilding
-            # the output file.
-            TailwindCSS.build(; root, input, output)
-        end
-        refresh()
     end
 end
 

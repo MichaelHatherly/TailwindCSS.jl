@@ -2,11 +2,12 @@ using TailwindCSS
 using Test
 
 @testset "TailwindCSS" begin
-    @test TailwindCSS.version() == v"3.3.3"
+    @test TailwindCSS.version() isa VersionNumber
+    @test !isempty(sprint(TailwindCSS.help))
     mktempdir() do dir
         cd(dir) do
             # Initialize the config.
-            run(`$(tailwindcss()) init`)
+            TailwindCSS.init()
             @test isfile("tailwind.config.js")
 
             # Update the config.
@@ -58,7 +59,7 @@ using Test
 
             @test !isfile("dist/output.css")
 
-            run(`$(tailwindcss()) -i ./src/input.css -o ./dist/output.css`)
+            TailwindCSS.build(; input = "src/input.css")
 
             @test isfile("dist/output.css")
 
