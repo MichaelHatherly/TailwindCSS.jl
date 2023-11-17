@@ -98,6 +98,7 @@ function create_artifacts()
     mkpath(build_path)
 
     artifact_toml = joinpath(@__DIR__, "..", "Artifacts.toml")
+    isfile(artifact_toml) && rm(artifact_toml)
     touch(artifact_toml)
 
     for line in eachline(sha256sums_file)
