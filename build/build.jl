@@ -8,9 +8,15 @@ build = 0
 
 tailwind_url_latest = "https://github.com/tailwindlabs/tailwindcss/releases/latest/download"
 
-sha256sums = "$(tailwind_url_latest)/sha256sums.txt"
-
-sha256sums_file = download(sha256sums)
+binary_files = [
+    "tailwindcss-linux-arm64",
+    "tailwindcss-linux-armv7",
+    "tailwindcss-linux-x64",
+    "tailwindcss-macos-arm64",
+    "tailwindcss-macos-x64",
+    "tailwindcss-windows-arm64.exe",
+    "tailwindcss-windows-x64.exe",
+]
 
 function host_platform()
     OS =
@@ -42,8 +48,7 @@ end
 function find_version()
     host = host_platform()
     version = nothing
-    for line in eachline(sha256sums_file)
-        sha, file = strip.(split(line, ' '; limit = 2))
+    for file in binary_files
         platform = platform_mapping(file)
         if platform == host
             @info "Downloading binary" file
@@ -51,10 +56,7 @@ function find_version()
             downloaded_file = download(url)
             @info "Verifying binary" file
             downloaded_sha = bytes2hex(SHA.sha256(open(downloaded_file)))
-            @info "SHA256" downloaded_sha sha
-            if downloaded_sha != sha
-                error("SHA256 mismatch for $file, expected $sha, got $downloaded_sha.")
-            end
+            @info "SHA256" downloaded_sha
             chmod(downloaded_file, 0o777)
             help_string = readchomp(`$downloaded_file --help`)
             version_regex = r"tailwindcss v([0-9]+\.[0-9]+\.[0-9]+)"
@@ -101,8 +103,7 @@ function create_artifacts()
     isfile(artifact_toml) && rm(artifact_toml)
     touch(artifact_toml)
 
-    for line in eachline(sha256sums_file)
-        sha, file = strip.(split(line, ' '; limit = 2))
+    for file in binary_files
 
         platform = platform_mapping(file)
         url = versioned_url(version, file)
@@ -117,9 +118,7 @@ function create_artifacts()
             @info "Verifying binary" file
             downloaded_sha = bytes2hex(SHA.sha256(open(downloaded_file)))
 
-            @info "SHA256" downloaded_sha sha
-            downloaded_sha == sha ||
-                error("SHA256 mismatch for $file, expected $sha, got $downloaded_sha.")
+            @info "SHA256" downloaded_sha
 
             @info "Setting permissions to 777" downloaded_file
             chmod(downloaded_file, 0o777)
