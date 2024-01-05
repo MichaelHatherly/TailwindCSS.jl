@@ -1,60 +1,60 @@
 [[tailwindcss]]
 arch = "aarch64"
-git-tree-sha1 = "eedaa9aa3a5f7fc531ee04763a803a0bd3ce1400"
+git-tree-sha1 = "6af5b464afe586672936a3317b6e05e792c40155"
 libc = "glibc"
 os = "linux"
 
     [[tailwindcss.download]]
-    sha256 = "7986d5a46034fdda896bde1c30ff2c220956f50036f3dc5c9c525c0190529747"
-    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.0%2B0/tailwindcss-3.4.0+0-aarch64-linux-gnu.tar.gz"
+    sha256 = "7f137bce9a9501fbf66361b6c0a1c6219f3b238e97028678bed3883c99dacddb"
+    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.1%2B0/tailwindcss-3.4.1+0-aarch64-linux-gnu.tar.gz"
 [[tailwindcss]]
 arch = "armv7l"
 call_abi = "eabihf"
-git-tree-sha1 = "8cbb3f408f8342893e06ea6e2d4f4ecd9cea31be"
+git-tree-sha1 = "ade7a0fd3064ef1bfb28116347d48aeb97f4303e"
 libc = "glibc"
 os = "linux"
 
     [[tailwindcss.download]]
-    sha256 = "57956a184dcf76867e33bccb394a60afd13ceed136b363c20a17cb021d2d7b6a"
-    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.0%2B0/tailwindcss-3.4.0+0-armv7l-linux-gnueabihf.tar.gz"
+    sha256 = "5caef75921d83b10629d45fa0625262869830508f5a5efc976a55736b6941da3"
+    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.1%2B0/tailwindcss-3.4.1+0-armv7l-linux-gnueabihf.tar.gz"
 [[tailwindcss]]
 arch = "x86_64"
-git-tree-sha1 = "51e7b83c9a74e8ad82ccfde86c30fd5479fc382b"
+git-tree-sha1 = "c194bf063cd14f148d0f1b5d83c7fbb87783a0c5"
 libc = "glibc"
 os = "linux"
 
     [[tailwindcss.download]]
-    sha256 = "87af5d362733683dc05f7ead915affcd9bde74615550017c2f458a53569c9022"
-    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.0%2B0/tailwindcss-3.4.0+0-x86_64-linux-gnu.tar.gz"
+    sha256 = "de7fdee77806a80dcdceb664419558aeacaa56f216d9c899b0a1283e91a7d900"
+    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.1%2B0/tailwindcss-3.4.1+0-x86_64-linux-gnu.tar.gz"
 [[tailwindcss]]
 arch = "aarch64"
-git-tree-sha1 = "512491ade53c7bb590ce5b7c2c47216e40067e63"
+git-tree-sha1 = "491a9dcfd6d8d6bac99032e47217751803afa668"
 os = "macos"
 
     [[tailwindcss.download]]
-    sha256 = "77b94e89e391a3963afc80ceeba8e7b2d3d8dbe0b94da6ecc0e1ef4ffddf52e4"
-    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.0%2B0/tailwindcss-3.4.0+0-aarch64-apple-darwin14.tar.gz"
+    sha256 = "1ae55ff29ae03e368e19ad07f89e18cbf9bd02ce3e05170fcbad78a61ad9550b"
+    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.1%2B0/tailwindcss-3.4.1+0-aarch64-apple-darwin14.tar.gz"
 [[tailwindcss]]
 arch = "x86_64"
-git-tree-sha1 = "62f880595d3c6c434eef5f765d805164ff71b484"
+git-tree-sha1 = "c360c5f9c46a1bae3e4e6130b7a49ea13826a710"
 os = "macos"
 
     [[tailwindcss.download]]
-    sha256 = "5ee6bd5bccf23042bb6e1b493b5aa8c33a50cc37f52a9a1ecb5308c53768d54c"
-    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.0%2B0/tailwindcss-3.4.0+0-x86_64-apple-darwin14.tar.gz"
+    sha256 = "ce42da75b97345bcdaa2a031ef60017931340f0f56cd2ec0f775a2c5c1dcd93a"
+    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.1%2B0/tailwindcss-3.4.1+0-x86_64-apple-darwin14.tar.gz"
 [[tailwindcss]]
 arch = "aarch64"
-git-tree-sha1 = "2cb4bfd3bd3bb50d9aba3e86de1a188e5996d8f0"
+git-tree-sha1 = "0fcb561fc0ae00aeed3ae9f5fde9a460f766d260"
 os = "windows"
 
     [[tailwindcss.download]]
-    sha256 = "38e4b2f92e6f47a03c4f5a757f756ef395244eca421d1a3677d742c08cbbb40d"
-    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.0%2B0/tailwindcss-3.4.0+0-aarch64-w64-mingw32.tar.gz"
+    sha256 = "942d7387c8d3a88be9d9fdf4fa091a8cb1d93e05550070700e922e1c4a0b186d"
+    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.1%2B0/tailwindcss-3.4.1+0-aarch64-w64-mingw32.tar.gz"
 [[tailwindcss]]
 arch = "x86_64"
-git-tree-sha1 = "6862489195bb75aa326c08a869b18921c84c43d7"
+git-tree-sha1 = "8c5df5a0d3d2d93c27d5b67579c315c8e4de65a5"
 os = "windows"
 
     [[tailwindcss.download]]
-    sha256 = "a3c78ec9328cce516405c617c1ce9074ece4521953c37c10434afe0929c53f2e"
-    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.0%2B0/tailwindcss-3.4.0+0-x86_64-w64-mingw32.tar.gz"
+    sha256 = "54ca8dd9fa60bad882afce26ac082d4949f96f987699f0f0ce12c54888fed8d7"
+    url = "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-3.4.1%2B0/tailwindcss-3.4.1+0-x86_64-w64-mingw32.tar.gz"
