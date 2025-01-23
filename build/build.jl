@@ -10,11 +10,11 @@ tailwind_url_latest = "https://github.com/tailwindlabs/tailwindcss/releases/late
 
 binary_files = [
     "tailwindcss-linux-arm64",
-    "tailwindcss-linux-armv7",
+    # "tailwindcss-linux-armv7",
     "tailwindcss-linux-x64",
     "tailwindcss-macos-arm64",
     "tailwindcss-macos-x64",
-    "tailwindcss-windows-arm64.exe",
+    # "tailwindcss-windows-arm64.exe",
     "tailwindcss-windows-x64.exe",
 ]
 
@@ -34,7 +34,7 @@ function platform_mapping(file::AbstractString)
     os = Symbol(m[1])
     arch = Symbol(m[2])
 
-    arch_aliases = (x64 = :x86_64,)
+    arch_aliases = (x64=:x86_64,)
 
     arch = get(arch_aliases, arch, arch)
 
@@ -95,7 +95,7 @@ function create_artifacts()
     version = find_version()
     build_path = joinpath(@__DIR__, "artifacts")
 
-    ispath(build_path) && rm(build_path; recursive = true, force = true)
+    ispath(build_path) && rm(build_path; recursive=true, force=true)
 
     mkpath(build_path)
 
@@ -136,9 +136,9 @@ function create_artifacts()
             artifact_toml,
             "tailwindcss",
             product_hash,
-            platform = platform,
-            force = true,
-            download_info = Tuple[(
+            platform=platform,
+            force=true,
+            download_info=Tuple[(
                 "https://github.com/MichaelHatherly/TailwindCSS.jl/releases/download/tailwindcss-$(URIs.escapeuri("$(version)+$(build)"))/$archive_filename",
                 download_hash,
             )],
