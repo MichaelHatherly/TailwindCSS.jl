@@ -59,7 +59,7 @@ function find_version()
             @info "SHA256" downloaded_sha
             chmod(downloaded_file, 0o777)
             help_string = readchomp(`$downloaded_file --help`)
-            version_regex = r"tailwindcss v([0-9]+\.[0-9]+\.[0-9]+)"
+            version_regex = r"v([0-9]+\.[0-9]+\.[0-9]+)"
             m = match(version_regex, help_string)
             m === nothing && error("Could not parse version from help string '$help_string'.")
             version_string = m[1]
